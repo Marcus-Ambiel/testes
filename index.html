@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Inspiracional e Clean</title>
+    <!-- Carrega o Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar a fonte Inter e uma cor primária moderna -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-accent': '#2563EB', // Um azul vibrante para o toque inspiracional
+                        'gray-light': '#f9fafb',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Importa a fonte Inter do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para a cor de fundo e transições suaves */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+        .hero-background {
+            background-color: #f9fafb; /* Cinza bem claro para o fundo do Hero */
+            background-image: radial-gradient(#d1d5db 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        /* Efeito sutil de hover no botão */
+        .cta-button {
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+        /* Oculta os elementos inicialmente para o efeito de revelação */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <!-- CABEÇALHO (NAV BAR CLEAN) -->
+    <header class="sticky top-0 z-10 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary-accent">Inspira<span class="text-gray-900">Lab</span></a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#proposta" class="hover:text-primary-accent transition duration-200">Proposta</a>
+                <a href="#recursos" class="hover:text-primary-accent transition duration-200">Recursos</a>
+                <a href="#contato" class="hover:text-primary-accent transition duration-200">Contato</a>
+            </nav>
+            <a href="#cta-section" class="hidden md:block px-4 py-2 bg-primary-accent text-white rounded-full text-sm font-semibold hover:bg-blue-700 transition duration-300 shadow-lg">
+                Começar
+            </a>
+            <!-- Menu mobile (ícone) -->
+            <button class="md:hidden text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- SEÇÃO HERO INSPIRACIONAL E DE DESTAQUE -->
+        <section id="proposta" class="hero-background min-h-[70vh] md:min-h-[85vh] flex items-center justify-center pt-16 pb-20">
+            <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                <p class="fade-in text-lg font-semibold text-primary-accent mb-4 delay-[100ms]">
+                    O Próximo Nível Começa Aqui.
+                </p>
+                <h1 class="fade-in text-5xl sm:text-7xl font-extrabold tracking-tight text-gray-900 leading-tight delay-[200ms]">
+                    Desbloqueie Seu <span class="text-primary-accent/90">Potencial Máximo</span>.
+                </h1>
+                <p class="fade-in mt-6 text-xl text-gray-500 delay-[300ms]">
+                    O futuro é construído por aqueles que ousam sonhar. Simplificamos a complexidade para que você possa focar na execução.
+                </p>
+                
+                <div class="fade-in mt-10 flex justify-center space-x-4 delay-[400ms]">
+                    <a href="#cta-section" class="cta-button px-8 py-3 bg-primary-accent text-white font-bold text-lg rounded-xl shadow-xl hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-primary-accent/50">
+                        Começar Agora
+                    </a>
+                    <a href="#recursos" class="cta-button px-8 py-3 bg-white text-gray-800 font-semibold text-lg rounded-xl border border-gray-300 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-300">
+                        Saiba Mais
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE RECURSOS/VALOR (CLEAN E MINIMALISTA) -->
+        <section id="recursos" class="py-20 md:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 fade-in delay-[500ms]">
+                        Ferramentas Para a Transformação
+                    </h2>
+                    <p class="mt-4 text-xl text-gray-500 max-w-2xl mx-auto fade-in delay-[600ms]">
+                        Nossa abordagem é simples, mas poderosa. Três pilares para o seu sucesso.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <!-- Recurso 1: Visão -->
+                    <div class="fade-in p-8 bg-gray-light rounded-2xl shadow-lg border border-gray-200 text-center delay-[700ms]">
+                        <div class="inline-flex items-center justify-center p-3 rounded-full bg-primary-accent/10 text-primary-accent mb-4">
+                            <!-- Ícone de Olho/Visão em SVG -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Visão Clara</h3>
+                        <p class="text-gray-600">Defina seus objetivos com precisão laser e visualize o caminho para alcançá-los sem distrações.</p>
+                    </div>
+
+                    <!-- Recurso 2: Execução -->
+                    <div class="fade-in p-8 bg-gray-light rounded-2xl shadow-lg border border-gray-200 text-center delay-[800ms]">
+                        <div class="inline-flex items-center justify-center p-3 rounded-full bg-primary-accent/10 text-primary-accent mb-4">
+                            <!-- Ícone de Foguete/Execução em SVG -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 10.5V6a2.25 2.25 0 00-4.5 0v4.5M21 21l-9-4.5M21 21l-4.5-9m4.5 9l-9-4.5m10.875-10.875a6.001 6.001 0 00-7.258-3.045 6.001 6.001 0 00-3.045 7.258A6.001 6.001 0 0012 21.75a6.001 6.001 0 007.258-3.045A6.001 6.001 0 0021 12.75z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Execução Impecável</h3>
+                        <p class="text-gray-600">Transforme planos em ação com ferramentas práticas e um foco inabalável no progresso diário.</p>
+                    </div>
+
+                    <!-- Recurso 3: Resultados -->
+                    <div class="fade-in p-8 bg-gray-light rounded-2xl shadow-lg border border-gray-200 text-center delay-[900ms]">
+                        <div class="inline-flex items-center justify-center p-3 rounded-full bg-primary-accent/10 text-primary-accent mb-4">
+                            <!-- Ícone de Troféu/Resultados em SVG -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15.5l-3-3m0 0l-3 3m3-3V1.5m8 15h-10a2 2 0 01-2-2v-3a2 2 0 012-2h10a2 2 0 012 2v3a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Resultados Duradouros</h3>
+                        <p class="text-gray-600">Construa hábitos sustentáveis e celebre vitórias que se acumulam, garantindo um crescimento contínuo.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO CTA FINAL (CALL TO ACTION) -->
+        <section id="cta-section" class="py-20 md:py-24 bg-primary-accent">
+            <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-snug fade-in delay-[1000ms]">
+                    Pronto para Começar a Criar Sua Própria História?
+                </h2>
+                <p class="mt-4 text-xl text-blue-100 fade-in delay-[1100ms]">
+                    Junte-se a milhares de pessoas que já transformaram suas ambições em realidade.
+                </p>
+                <a href="#" class="cta-button inline-block mt-8 px-10 py-4 bg-white text-primary-accent font-bold text-xl rounded-xl shadow-2xl hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-white/50 fade-in delay-[1200ms]">
+                    Garanta Sua Vaga Hoje
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ CLEAN -->
+    <footer id="contato" class="bg-gray-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-400">© 2024 InspiraLab. Todos os direitos reservados. | Privacidade | Termos</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <!-- Ícones de redes sociais (simulados com links vazios) -->
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10v4h2v6h4v-6h2l1-4h-3V8a1 1 0 011-1h2V4h-3a4 4 0 00-4 4v2H7z"></path></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 5.89a8.1 8.1 0 01-2.3.6 4.1 4.1 0 001.8-2.2 8.2 8.2 0 01-2.6 1 4.1 4.1 0 00-7 3.7 11.6 11.6 0 01-8.4-4.2 4.1 4.1 0 001.2 5.5 4.1 4.1 0 01-1.8-.5v.1a4.1 4.1 0 003.3 4 4.1 4.1 0 01-1.8.1 4.1 4.1 0 003.8 2.8 8.3 8.3 0 01-5.1 1.7 11.6 11.6 0 006.3 1.8c7.5 0 11.6-6.2 11.6-11.6v-.5a8.3 8.3 0 002.1-2.2z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT PARA INTERAÇÃO CLEAN -->
+    <script>
+        // Função para Smooth Scroll (rolagem suave)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Ajusta para o cabeçalho fixo
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Efeito de Revelação (Fade-In on Scroll)
+        const faders = document.querySelectorAll('.fade-in');
+
+        const appearOptions = {
+            threshold: 0,
+            rootMargin: "0px 0px -100px 0px" // Inicia 100px antes de entrar na tela
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            // Adiciona uma pequena pausa para o cabeçalho aparecer antes do Hero
+            const delay = parseInt(fader.style.getPropertyValue('transition-delay')) || 0;
+            setTimeout(() => {
+                appearOnScroll.observe(fader);
+            }, delay);
+        });
+        
+    </script>
+</body>
+</html>
