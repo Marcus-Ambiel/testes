@@ -86,22 +86,49 @@
         </div>
     </div>
 
-    <!-- Script para controle do modal -->
+    <!-- Script para controle do modal e FALLBACK CORRIGIDO -->
     <script>
-        // Não é mais necessário usar JavaScript para preencher o nome, 
-        // pois a tag {{current_user.name}} será renderizada diretamente pelo backend.
-        
+        // Função para mostrar o modal de confirmação
         function showConfirmation() {
-            // Mostra o modal
             const box = document.getElementById('confirmation-box');
             box.classList.remove('hidden');
         }
 
+        // Função para esconder o modal
         function hideConfirmation() {
-            // Esconde o modal
             const box = document.getElementById('confirmation-box');
             box.classList.add('hidden');
         }
+
+        // --- CORREÇÃO: Fallback de exibição para o ambiente Canvas E Pipefy (string vazia) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const nameInput = document.getElementById('name-input');
+            const nameDisplay = document.getElementById('user-name-display');
+            
+            const rawTag = "{{current_user.name}}";
+            const simulatedName = "Nome de Exemplo (Pipefy)"; // Nome de fallback para visualização
+
+            // 1. Correção para o INPUT (Verifica tag literal OU string vazia)
+            if (nameInput) {
+                const inputValue = nameInput.value.trim();
+                
+                // Se a tag não foi substituída (Canvas) OU se resultou em string vazia (Pipefy falhou)
+                if (inputValue === rawTag || inputValue === "") {
+                    nameInput.value = simulatedName;
+                }
+            }
+
+            // 2. Correção para o DISPLAY (Saudação)
+            if (nameDisplay) {
+                const displayText = nameDisplay.textContent.trim();
+                
+                // Se a tag não foi substituída (Canvas) OU se resultou em string vazia (Pipefy falhou)
+                if (displayText === rawTag || displayText === "") {
+                    nameDisplay.textContent = simulatedName;
+                }
+            }
+        });
+        
     </script>
 </body>
 </html>
