@@ -35,7 +35,7 @@
     <!-- Container principal com responsividade: cards em uma linha, seguidos pela tabela -->
     <div class="w-full max-w-6xl mx-auto">
 
-        <!-- Seção de Cards (mantida da versão anterior) -->
+        <!-- Seção de Cards -->
         <div class="flex flex-col md:flex-row gap-4 mb-8">
 
             <!-- Card: Grupo econômico -->
@@ -79,6 +79,7 @@
 
         </div>
 
+        
         <!-- Seção da Tabela -->
         <!-- Uso de overflow-x-auto para garantir scroll horizontal em telas muito pequenas, protegendo o layout -->
         <div class="bg-card-bg rounded-xl shadow-lg overflow-x-auto">
@@ -164,9 +165,17 @@
 
         <!-- Rodapé da Tabela (Número de registros) -->
         <div class="text-secondary-text text-sm mt-2 p-1">
-           <a href="google.com"> 1 registro</a>
+            1 registro
         </div>
-
+ <!-- NOVO: Seção do Botão CTA (Call to Action) -->
+        <div class="mb-8 flex justify-center">
+            <a href="https://www.abcbrasil.com.br/" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                Banco ABC Brasil
+                <!-- Ícone para indicar link externo/nova aba -->
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+        </div>
     </div>
 
 </body>
