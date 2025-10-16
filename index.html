@@ -32,12 +32,35 @@
 </head>
 <body class="min-h-screen p-4 sm:p-8 flex flex-col items-center justify-start">
 
-    <!-- Container principal com responsividade: cards em uma linha, seguidos pela tabela -->
+    <!-- Container principal com responsividade -->
     <div class="w-full max-w-6xl mx-auto">
 
-        <!-- Seção de Cards -->
-        <div class="flex flex-col md:flex-row gap-4 mb-8">
+        <!-- NOVO: Seção de Cabeçalho Principal (Nome, Data, Botão Atualizar) -->
+        <div class="mb-10 text-primary-text">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-light-border pb-6 mb-8">
+                
+                <!-- Info Left: Nome e Data -->
+                <div class="flex flex-wrap gap-x-12 gap-y-4 mb-4 md:mb-0">
+                    <div>
+                        <p class="text-black text-sm">Nome do Cliente</p>
+                        <h1 class="text-gray-900 font-semibold">Banco Abc Brasil</h1>
+                    </div>
+                    <div>
+                        <p class="text-secondary-text text-sm">Data da última atualização</p>
+                        <p class="text-gray-400 font-semibold">01/10/2025 18:46</p>
+                    </div>
+                </div>
 
+                <!-- Botão Atualizar (CTA que faz refresh da página) -->
+                <button onclick="window.location.reload()"
+                        class="px-8 py-2 border border-gray-400 text-sm font-medium rounded-lg text-black bg-transparent hover:bg-gray-400 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-dark-bg">
+                    Atualizar
+                </button>
+            </div>
+        </div>
+
+        <!-- Seção de Cards (Existente) -->
+        <div class="flex flex-col md:flex-row gap-4 mb-10">
             <!-- Card: Grupo econômico -->
             <div class="flex-1 min-w-0">
                 <div class="bg-card-bg text-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
@@ -76,11 +99,74 @@
                     </p>
                 </div>
             </div>
-
         </div>
 
+        <!-- NOVO: Título do Resumo Inicial -->
+        <h2 class="text-2xl font-bold text-gray-400 mb-6">Resumo Inicial</h2>
+
+        <!-- NOVO: Grid de Detalhes (Resumo Inicial) - Aplicando o estilo de card a cada item -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10 text-primary-text">
+            
+            <!-- Situação de crédito -->
+            <div class="bg-card-bg p-4 rounded-xl shadow transition duration-300 hover:shadow-lg">
+                <p class="text-secondary-text text-sm mb-1">Situação de crédito</p>
+                <p class="font-medium text-base">EM CURSO NORMAL</p>
+            </div>
+            
+            <!-- Status do limite -->
+            <div class="bg-card-bg p-4 rounded-xl shadow transition duration-300 hover:shadow-lg">
+                <p class="text-secondary-text text-sm mb-1">Status do limite</p>
+                <p class="font-medium text-base">Vigente</p>
+            </div>
+            
+            <!-- Saldo devedor -->
+            <div class="bg-card-bg p-4 rounded-xl shadow transition duration-300 hover:shadow-lg">
+                <p class="text-secondary-text text-sm mb-1">Saldo devedor</p>
+                <p class="font-medium text-base">R$ 9.000,00</p>
+            </div>
+
+            <!-- PDD -->
+            <div class="bg-card-bg p-4 rounded-xl shadow transition duration-300 hover:shadow-lg">
+                <p class="text-secondary-text text-sm mb-1">PDD</p>
+                <p class="font-medium text-base">R$ 10.000,00</p>
+            </div>
+
+            <!-- Vencido ABC -->
+            <div class="bg-card-bg p-4 rounded-xl shadow transition duration-300 hover:shadow-lg">
+                <p class="text-secondary-text text-sm mb-1">Vencido ABC</p>
+                <p class="font-medium text-base">22</p>
+            </div>
+            
+            <!-- Cliente desde -->
+            <div class="bg-card-bg p-4 rounded-xl shadow transition duration-300 hover:shadow-lg">
+                <p class="text-secondary-text text-sm mb-1">Cliente desde</p>
+                <p class="font-medium text-base">02/10/2025</p>
+            </div>
+
+            <!-- Últ trabalho de crédito e CADU -->
+            <div class="bg-card-bg p-4 rounded-xl shadow transition duration-300 hover:shadow-lg">
+                <p class="text-secondary-text text-sm mb-1">Últ trabalho de crédito</p>
+                <p class="font-medium text-base">02/10/2025</p>
+                <p class="text-secondary-text font-medium text-base mt-2">CADU</p>
+            </div>
+            
+            <!-- Vencimento trabalho de crédito -->
+            <div class="bg-card-bg p-4 rounded-xl shadow transition duration-300 hover:shadow-lg">
+                <p class="text-secondary-text text-sm mb-1">Vencimento trabalho de crédito</p>
+                <p class="font-medium text-base">22/10/2025</p>
+            </div>
+
+            <!-- Dt revisão crédito -->
+            <div class="bg-card-bg p-4 rounded-xl shadow transition duration-300 hover:shadow-lg">
+                <p class="text-secondary-text text-sm mb-1">Dt revisão crédito</p>
+                <p class="font-medium text-base">28/11/2025</p>
+            </div>
+            
+        </div>
         
-        <!-- Seção da Tabela -->
+       
+        
+        <!-- Seção da Tabela (Existente) -->
         <!-- Uso de overflow-x-auto para garantir scroll horizontal em telas muito pequenas, protegendo o layout -->
         <div class="bg-card-bg rounded-xl shadow-lg overflow-x-auto">
             <table class="min-w-full divide-y divide-light-border text-primary-text">
@@ -167,11 +253,12 @@
         <div class="text-secondary-text text-sm mt-2 p-1">
             1 registro
         </div>
- <!-- NOVO: Seção do Botão CTA (Call to Action) -->
-        <div class="mb-8 flex justify-center">
-            <a href="https://www.abcbrasil.com.br/" rel="noopener noreferrer"
-               class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
-                Banco ABC Brasil
+        <br>
+ <!-- CTA Atualizado: Acessar Site (Alinhado à esquerda, cor dos cards, padding) -->
+        <div class="mb-8 flex justify-start">
+            <a href="https://www.abcbrasil.com.br/" target="_blank" rel="noopener noreferrer"
+               class="bg-card-bg inline-flex items-center p-4 rounded-xl shadow-lg text-primary-text hover:bg-gray-800 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-dark-bg">
+                Acessar Site do Banco ABC Brasil
                 <!-- Ícone para indicar link externo/nova aba -->
                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
